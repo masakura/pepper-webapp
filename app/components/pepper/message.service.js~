@@ -1,0 +1,11 @@
+const milkcocoa = new MilkCocoa("hotif8ab67j.mlkcca.com");
+const datastore = milkcocoa.dataStore('nise/#abc');
+
+datastore.on('send', function (data) {
+  console.log(data.value.text);
+});
+
+export class MessageService {
+  constructor () {
+  }
+}
