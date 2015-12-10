@@ -1,11 +1,17 @@
 export class MessageService {
-  constructor () {
+  constructor (datasource, $rootScope) {
     'ngInject';
 
     this.messages = [];
+    this.datastore = datasource.datastore();
+
+    this.datastore.on('send', data => {
+      $rootScope.$apply(() => this.messages.push(data.value));
+    });
   }
 
   send(text) {
-    this.messages.push({text: text});
+    const message = {text: text};
+    this.datastore.send(message);
   }
 }

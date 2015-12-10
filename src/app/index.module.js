@@ -7,6 +7,7 @@ import { MainController } from './main/main.controller';
 import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
 import { MessageService } from '../app/components/pepper/message.service';
+import { Datasource } from '../app/components/milkcocoa/datasource.service';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 import { PepperTalkDirective } from '../app/components/pepper/pepperTalk.directive';
@@ -20,6 +21,7 @@ angular.module('pepperWebapp', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize
   .service('githubContributor', GithubContributorService)
   .service('webDevTec', WebDevTecService)
   .service('messageService', MessageService)
+  .service('datasource', Datasource)
   .controller('MainController', MainController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeMalarkey', MalarkeyDirective)
