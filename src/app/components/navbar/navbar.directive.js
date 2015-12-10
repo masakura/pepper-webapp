@@ -16,10 +16,16 @@ export function NavbarDirective() {
 }
 
 class NavbarController {
-  constructor (moment) {
+  constructor (moment, $window) {
     'ngInject';
 
     // "this.creation" is avaible by directive option "bindToController: true"
     this.relativeDate = moment(this.creationDate).fromNow();
+
+    this.$window = $window;
+  }
+
+  reload () {
+    this.$window.location.reload();
   }
 }
